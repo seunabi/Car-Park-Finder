@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bristol Car Park Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/data-styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="icon" type="image/x-icon" href="style\static\favicon.ico">
+    <script>
+      (function () {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme === "dark") {
+              document.documentElement.classList.add("dark-mode");
+          }
+      })();
+    </script>
+    <style>
+      body {
+        background-size: cover;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .info-box {
+        max-width: 600px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        text-align: center;
+      }
+
+      .info-box h2 {
+        margin-bottom: 10px;
+      }
+
+      .info-box p {
+        color: #555;
+        font-size: 16px;
+      }
+
+      .map-container {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 20px;
+      }
+      #home-map {
+        width: 100%;
+        height: 100%;
+      }
+
+      .dark-mode .info-box {
+        background: rgba(30, 30, 30, 0.8);
+        color: white;
+      }
+      .dark-mode .info-box h2 {
+        color: white;
+      }
+      .dark-mode .info-box p {
+        color: #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="brand-dock"><span>Bristol Car Park Finder</span></div>
+    <div class="info-box">
+      <h2>Find Parking in Bristol Easily</h2>
+      <p>
+        Looking for parking in Bristol? Our interactive map helps you find the nearest car parks, 
+        their capacity, and the pricing.
+      </p>
+      <p>
+        Whether you're visiting the city centre, shopping areas, or tourist attractions, we provide
+        real-time data on parking locations, space availability, and pricing details.
+      </p>
+      <p>
+        Click on the search icon to explore available car parks, or use the search feature to find specific locations.
+      </p>
+      <div class="map-container">
+        <div id="home-map"></div>
+      </div>
+    </div>
+    <div class="hovering-dock">
+      <ul>
+        <li class="hovering-dock-active"><a href="index.html"><i class="bi bi-house-fill"></i></a></li>
+        <li><a href="data.html"><i class="bi bi-search"></i></a></li>
+      </ul>
+    </div>
+    <div class="theme-toggle" onclick="toggleTheme()">
+      <i class="bi bi-moon"></i>
+    </div>
+    <script src="js/js.js"></script>   
+  </body>
+</html>
